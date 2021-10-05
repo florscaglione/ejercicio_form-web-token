@@ -22,7 +22,7 @@ export const Register = () => {
 	}, []);
 
 	async function loadCountries() {
-		const countries = await fetch("https://3001-blush-antlion-lmk5yotd.ws-eu18.gitpod.io/api/countries").then(
+		const countries = await fetch("https://3001-blue-crab-x7645bs6.ws-eu18.gitpod.io/api/countries").then(
 			response => response.json()
 		);
 
@@ -33,7 +33,7 @@ export const Register = () => {
 		const countryIdSelected = event.target.value;
 
 		const cities = await fetch(
-			`https://3001-blush-antlion-lmk5yotd.ws-eu18.gitpod.io/api/countries/${countryIdSelected}/cities`
+			`https://3001-blue-crab-x7645bs6.ws-eu18.gitpod.io/api/countries/${countryIdSelected}/cities`
 		).then(response => response.json());
 
 		setCities(cities);
@@ -47,7 +47,7 @@ export const Register = () => {
 
 	async function createCity(countryId, cityName) {
 		return await fetch(
-			`https://3001-blush-antlion-lmk5yotd.ws-eu18.gitpod.io/api/countries/${countryId}/cities/create`,
+			"https://3001-blue-crab-x7645bs6.ws-eu18.gitpod.io/api/countries/${countryId}/cities/create",
 			{
 				method: "POST",
 				headers: {
@@ -61,7 +61,7 @@ export const Register = () => {
 	}
 
 	async function createCountry(countryName) {
-		return await fetch(`https://3001-blush-antlion-lmk5yotd.ws-eu18.gitpod.io/api/countries/create`, {
+		return await fetch("https://3001-blue-crab-x7645bs6.ws-eu18.gitpod.io/api/countries/create", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
@@ -84,7 +84,7 @@ export const Register = () => {
 			userCityId = cityCreated.id;
 		}
 
-		const user = await fetch(`https://3001-blush-antlion-lmk5yotd.ws-eu18.gitpod.io/api/users/create`, {
+		const user = await fetch("https://3001-blue-crab-x7645bs6.ws-eu18.gitpod.io/api/users/create", {
 			method: "POST",
 			headers: {
 				"Content-Type": "application/json"
